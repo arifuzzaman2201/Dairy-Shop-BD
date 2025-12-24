@@ -112,8 +112,8 @@ DailyDairyShop/
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/Sharatpsd/DailyDairyShop.git
-cd DailyDairyShop
+git clone https://github.com/arifuzzaman2201/Dairy-Shop-BD.git
+cd DairyShopBD
 ```
 
 ### **2. Install Dependencies**
@@ -178,8 +178,8 @@ python manage.py runserver
 Computer Science & Engineering
 Green University of Bangladesh
 
-* GitHub: [https://github.com/Sharatpsd](https://github.com/Sharatpsd)
-* Email: [sharatacharjee6@gmail.com](mailto:sharatacharjee6@gmail.com)
-* Portfolio: [https://mugdho-portfolio.netlify.app/](https://mugdho-portfolio.netlify.app/)
+* GitHub: [https://github.com/arifuzzaman2201](https://github.com/arifuzzaman2201)
+* Email: [arifuzzamanarif665@gmail.com](mailto:arifuzzamanarif665@gmail.com)
+* Portfolio: 
 
 ---
