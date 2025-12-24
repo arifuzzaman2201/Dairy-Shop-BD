@@ -15,7 +15,7 @@ It features a beautiful, responsive frontend for customers and a powerful custom
 
 Perfect for small dairy businesses, startups, or learning full-stack Django development.
 
-**Live Demo:** [https://dailydairyshop-3.onrender.com](https://dailydairyshop-3.onrender.com)
+**Live Demo:** [https://dairy-shop-bd.onrender.com/](https://dairy-shop-bd.onrender.com/)
 
 ---
 
@@ -181,5 +181,6 @@ Green University of Bangladesh
 * GitHub: [https://github.com/arifuzzaman2201](https://github.com/arifuzzaman2201)
 * Email: [arifuzzamanarif665@gmail.com](mailto:arifuzzamanarif665@gmail.com)
 * Portfolio: 
+
 
 ---
