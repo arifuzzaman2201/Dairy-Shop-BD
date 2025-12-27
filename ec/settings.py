@@ -5,6 +5,7 @@ Django settings for ec project.
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
+from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -18,6 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ---------------- SECURITY ----------------
 SECRET_KEY = 'django-insecure-4^hblj$3@q-n3mp%vmvy&367_c*@jqj$bo7@25wq_6mkd9gu&f'
 DEBUG = True
+
+# Load environment variables from .env in project root
+load_dotenv(BASE_DIR / '.env')
 
 ALLOWED_HOSTS = [
     "dairy-shop-bd.onrender.com",
@@ -75,16 +79,25 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# Modern allauth settings (replacing deprecated ones)
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # ---------------- GOOGLE OAUTH ----------------
+_GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+_GOOGLE_SECRET = os.environ.get('GOOGLE_SECRET')
+
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online'},
+        # Configure via environment variables (used by allauth when no DB SocialApp)
+        'APP': {
+            'client_id': _GOOGLE_CLIENT_ID or '',
+            'secret': _GOOGLE_SECRET or '',
+            'key': ''
+        },
     }
 }
 

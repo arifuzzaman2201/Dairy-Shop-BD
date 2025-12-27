@@ -8,6 +8,10 @@ venv/
 # Database (optional)
 db.sqlite3
 
+# Environment variables
+.env
+.env.local
+
 # OS junk
 .DS_Store
 Thumbs.db
