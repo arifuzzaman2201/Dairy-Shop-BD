@@ -5,10 +5,18 @@ Django settings for ec project.
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
-from dotenv import load_dotenv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'sharatacharjee6@gmail.com'
+EMAIL_HOST_PASSWORD = 'iyxrzfhdjoxvguhq'  # ⚠️ no spaces
+DEFAULT_FROM_EMAIL = 'Daily Dairy Shop <sharatacharjee6@gmail.com>'
 
 
 
@@ -20,15 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4^hblj$3@q-n3mp%vmvy&367_c*@jqj$bo7@25wq_6mkd9gu&f'
 DEBUG = True
 
-# Load environment variables from .env in project root
-load_dotenv(BASE_DIR / '.env')
-
 ALLOWED_HOSTS = [
-    "dairy-shop-bd.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    'dailydairyshop-3.onrender.com',
+    '127.0.0.1',
+    'localhost'
 ]
-
 
 # ---------------- LOGIN ----------------
 LOGIN_URL = '/accounts/login/'
@@ -79,25 +83,16 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-# Modern allauth settings (replacing deprecated ones)
-ACCOUNT_LOGIN_METHODS = {'email'}
-ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # ---------------- GOOGLE OAUTH ----------------
-_GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
-_GOOGLE_SECRET = os.environ.get('GOOGLE_SECRET')
-
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online'},
-        # Configure via environment variables (used by allauth when no DB SocialApp)
-        'APP': {
-            'client_id': _GOOGLE_CLIENT_ID or '',
-            'secret': _GOOGLE_SECRET or '',
-            'key': ''
-        },
     }
 }
 
