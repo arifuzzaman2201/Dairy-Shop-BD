@@ -15,7 +15,7 @@ It features a beautiful, responsive frontend for customers and a powerful custom
 
 Perfect for small dairy businesses, startups, or learning full-stack Django development.
 
-**Live Demo:** [https://dairy-shop-bd.onrender.com/](https://dairy-shop-bd.onrender.com/)
+**Live Demo:** [https://dairyshop-bd.onrender.com/](https://dairyshop-bd.onrender.com/)
 
 ---
 
@@ -142,9 +142,9 @@ python manage.py runserver
 
 | Page                   | URL                                                                    |
 | ---------------------- | ---------------------------------------------------------------------- |
-| Homepage               | [http://127.0.0.1:8000](http://127.0.0.1:8000)                         |
-| Django Admin           | [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)             |
-| Custom Admin Dashboard | [http://127.0.0.1:8000/adminpanel/](http://127.0.0.1:8000/adminpanel/) |
+| Homepage               | [https://dairyshop-bd.onrender.com/](https://dairyshop-bd.onrender.com/)                         |
+| Django Admin           | [https://dairyshop-bd.onrender.com/admin/](https://dairyshop-bd.onrender.com/admin/)             |
+| Custom Admin Dashboard | [https://dairyshop-bd.onrender.com/adminpanel/](https://dairyshop-bd.onrender.com/adminpanel/) |
 
 ---
 
