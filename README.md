@@ -174,7 +174,7 @@ python manage.py runserver
 
 ## 👨‍💻 Author
 
-**Sharat Acharja Mugdho**
+**Arifuzzaman Arif**
 Computer Science & Engineering
 Green University of Bangladesh
 
